@@ -92,7 +92,7 @@ let g:rustfmt_autosave = 1
 let g:NERDTreeDirArrowExpandale="+"
 let g:NERDTreeDirArrowCollapsible="~"
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
-nnoremap <C-c> :NvimTreeFocus<CR>
+nnoremap <C-c> :NvimTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <F8> :TagbarToggle<CR>
 :imap jj <Esc>
@@ -108,10 +108,6 @@ nmap <right> <C-w><right>
 " ------------------------------------
 " j-hui/fidget.nvim
 " ------------------------------------
-if has('win32')
-  " Avoid mswin.vim making Ctrl-v act as paste
-  noremap <C-V> <C-V>
-endif
 lua require("fidget").setup()
 
 " ------------------------------------
