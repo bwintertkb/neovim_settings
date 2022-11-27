@@ -13,6 +13,7 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 " Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
@@ -56,6 +57,7 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'dyng/ctrlsf.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 syntax on
 set t_Co=256
