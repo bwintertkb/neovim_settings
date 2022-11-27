@@ -101,8 +101,18 @@ nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <F8> :TagbarToggle<CR>
 :imap jj <Esc>
 let g:transparent_enabled = v:false
-lua require("toggleterm").setup({open_mapping = [[<C-j>]], close_mapping =  [[<C-j>]]})
+" Terminal to normal mode
+tnoremap <leader><Esc> <C-\><C-n>
+lua require("toggleterm").setup({open_mapping = [[<C-j>]], close_mapping = [[<C-j>]], size = 10})
 lua require('nvim_comment').setup()
+" Toggle terminal on/off (neovim)
+nnoremap <A-t> :call TermToggle(12)<CR>
+inoremap <A-t> <Esc>:call TermToggle(12)<CR>
+tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
+
+" Terminal go back to normal mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap :q! <C-\><C-n>:q!<CR>
 nnoremap <Tab> :Telescope oldfiles<CR>
 nmap <up> <C-w><up>
 nmap <down> <C-w><down>
@@ -116,7 +126,7 @@ lua require("fidget").setup()
 
 " ------------------------------------
 " kosayoda/nvim-lightbulb
-" ------------------------------------
+" ------------------------------------" Toggle terminal on/off (neovim)
 "
 autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
 
@@ -330,4 +340,3 @@ require('nvim-treesitter.configs').setup {
 }
 require('hlargs').setup()
 EOF
-
