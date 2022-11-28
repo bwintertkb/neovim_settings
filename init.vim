@@ -80,6 +80,8 @@ let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
 " Setting a value to a blank string leaves that command unmapped:
 let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " :lua require("nvim-tree").setup({diagnostics = {enable = true}, log = {enable=true, truncate=true, types={diagnostics=true},}})
 
 " ... or set only the commands you want mapped without defaults.
