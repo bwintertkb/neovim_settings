@@ -64,8 +64,7 @@ call plug#end()
 syntax on
 :lua require("telescope").setup()
 set t_Co=256
-:colorscheme catppuccin
-lua require("catppuccin").setup({no_italic = false,})
+:colorscheme onedark
 set termguicolors
 " Use all the defaults (recommended):
 let g:lsc_auto_map = v:true

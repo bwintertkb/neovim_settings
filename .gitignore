@@ -1,2 +1,3 @@
 push_nvim_settings.bash
 pull_and_copy_nvim.bash
+pull_nvim_settings.bash
