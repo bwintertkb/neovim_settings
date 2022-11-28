@@ -59,11 +59,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'dyng/ctrlsf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 syntax on
 :lua require("telescope").setup()
 set t_Co=256
-:colorscheme onedark
+:colorscheme catppuccin
 set termguicolors
 " Use all the defaults (recommended):
 let g:lsc_auto_map = v:true
