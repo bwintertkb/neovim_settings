@@ -62,11 +62,14 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'Shatur/neovim-ayu'
+Plug 'yunlingz/equinusocio-material.vim'
 call plug#end()
 syntax on
 :lua require("telescope").setup()
-set t_Co=256
+:set t_Co=256
 :colorscheme onedark
+
 set termguicolors
 " Use all the defaults (recommended):
 let g:lsc_auto_map = v:true
