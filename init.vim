@@ -38,7 +38,7 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'weilbith/nvim-code-action-menu'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'https://github.com/xiyaowong/nvim-transparent' " Transparent background
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'} " Toggle terminal
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
@@ -60,6 +60,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 call plug#end()
 syntax on
 :lua require("telescope").setup()
@@ -75,7 +77,7 @@ let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
 " Setting a value to a blank string leaves that command unmapped:
 let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
 
-:lua require("nvim-tree").setup({diagnostics = {enable = true},})
+" :lua require("nvim-tree").setup({diagnostics = {enable = true}, log = {enable=true, truncate=true, types={diagnostics=true},}})
 
 " ... or set only the commands you want mapped without defaults.
 " Complete default mappings are:
@@ -97,7 +99,7 @@ let g:rustfmt_autosave = 1
 let g:NERDTreeDirArrowExpandale="+"
 let g:NERDTreeDirArrowCollapsible="~"
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
-nnoremap <C-c> :NvimTreeToggle<CR>
+nnoremap <C-c> :NeoTreeFocusToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <F8> :TagbarToggle<CR>
 :imap jj <Esc>
@@ -321,6 +323,9 @@ cmp.setup({
   },
 })
 EOF
+
+:lua require('neo-tree').setup({window={width=22,},})
+
 
 " Setup Treesitter and friends
 "
