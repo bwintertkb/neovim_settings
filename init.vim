@@ -160,6 +160,9 @@ lua require("trouble").setup()
 " https://github.com/simrat39/rust-tools.nvim#configuration
 "
 lua <<EOF
+require("lspconfig").pyright.setup{}
+EOF
+lua <<EOF
 local opts = {
   -- rust-tools options
   tools = {
@@ -202,7 +205,6 @@ local opts = {
 }
 require('rust-tools').setup(opts)
 EOF
-
 " Configure Golang LSP.
 "
 " https://github.com/golang/tools/blob/master/gopls/doc/settings.md
