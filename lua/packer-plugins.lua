@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
 	-- colorschemes
 	use 'navarasu/onedark.nvim'
 	use 'EdenEast/nightfox.nvim'
+	use 'folke/tokyonight.nvim'
 	-- vim-airline
 	use 'vim-airline/vim-airline'
 	-- dev-icons
