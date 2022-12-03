@@ -27,7 +27,10 @@ require('onedark').setup  {
     },
 
     -- Custom Highlights --
-    colors = {}, -- Override default colors
+    -- Override default colors
+	colors = {
+    bright_orange = "#ff8800",    -- define a new color
+  },
     highlights = {}, -- Override highlight groups
 
     -- Plugins Config --
@@ -38,8 +41,8 @@ require('onedark').setup  {
     },
 	highlights = {
     TSKeyword = {fg = '$green'},
-    TSString = {fg = '$orange', bg = '#00ff00', fmt = 'bold'},
-    TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    TSString = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
+    TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline'},
     TSFuncBuiltin = {fg = '#0059ff'}
   }
 }
