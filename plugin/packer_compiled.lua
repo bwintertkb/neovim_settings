@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
+  neon = {
+    loaded = true,
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neon",
+    url = "https://github.com/rafamadriz/neon"
+  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nightfox.nvim",
@@ -250,11 +255,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
-  ["vim-code-dark"] = {
-    loaded = true,
-    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-code-dark",
-    url = "https://github.com/tomasiser/vim-code-dark"
-  },
   ["vim-devicons"] = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-devicons",
@@ -289,11 +289,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

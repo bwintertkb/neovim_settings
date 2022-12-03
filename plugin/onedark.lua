@@ -36,9 +36,15 @@ require('onedark').setup  {
         undercurl = true,   -- use undercurl instead of underline for diagnostics
         background = true,    -- use background color for virtual text
     },
+	highlights = {
+    TSKeyword = {fg = '$green'},
+    TSString = {fg = '$orange', bg = '#00ff00', fmt = 'bold'},
+    TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    TSFuncBuiltin = {fg = '#0059ff'}
+  }
 }
 
--- vim.cmd([[colorscheme onedark]])
+vim.cmd([[colorscheme onedark]])
 -- require("tokyonight").setup({
 --   -- your configuration comes here
 --   -- or leave it empty to use the default settings

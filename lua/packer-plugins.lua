@@ -55,6 +55,5 @@ return require('packer').startup(function(use)
 	use 'jose-elias-alvarez/typescript.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'olimorris/onedarkpro.nvim'
-	use 'Mofiqul/vscode.nvim'
-	use 'tomasiser/vim-code-dark'
+	use 'rafamadriz/neon'
 end)
