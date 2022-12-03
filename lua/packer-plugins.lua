@@ -50,5 +50,8 @@ return require('packer').startup(function(use)
 	use 'jiangmiao/auto-pairs' 
 	use 'MunifTanjim/nui.nvim'
 	use 'nvim-neo-tree/neo-tree.nvim'
+	use 'leafgarland/typescript-vim'
+	use 'ianks/vim-tsx'
+	use 'jose-elias-alvarez/typescript.nvim'
 
 end)
