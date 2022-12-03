@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["coc.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
-  },
   ["ctrlp.vim"] = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ctrlp.vim",
@@ -173,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

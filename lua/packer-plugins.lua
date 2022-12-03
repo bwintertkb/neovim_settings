@@ -53,5 +53,6 @@ return require('packer').startup(function(use)
 	use 'leafgarland/typescript-vim'
 	use 'ianks/vim-tsx'
 	use 'jose-elias-alvarez/typescript.nvim'
+	use 'nvim-treesitter/nvim-treesitter'
 
 end)
