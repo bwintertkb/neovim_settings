@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
 	use {
   'nvim-telescope/telescope.nvim', tag = '0.1.0'}
 	use 'natebosch/vim-lsc'
-	use 'terryma/vim-multiple-cursors'
+	use 'mg979/vim-visual-multi'
 	use 'dyng/ctrlsf.vim'
 	use 'jiangmiao/auto-pairs' 
 	use 'MunifTanjim/nui.nvim'
@@ -54,5 +54,6 @@ return require('packer').startup(function(use)
 	use 'ianks/vim-tsx'
 	use 'jose-elias-alvarez/typescript.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
+	use 'olimorris/onedarkpro.nvim'
 
 end)

@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
   },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
@@ -260,15 +265,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-lsc",
     url = "https://github.com/natebosch/vim-lsc"
   },
-  ["vim-multiple-cursors"] = {
-    loaded = true,
-    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-multiple-cursors",
-    url = "https://github.com/terryma/vim-multiple-cursors"
-  },
   ["vim-tsx"] = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-tsx",
     url = "https://github.com/ianks/vim-tsx"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   },
   ["vim-vsnip"] = {
     loaded = true,
