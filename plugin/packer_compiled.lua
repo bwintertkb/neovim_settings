@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["conoline.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\conoline.vim",
+    url = "https://github.com/miyakogi/conoline.vim"
+  },
   ["ctrlp.vim"] = {
     loaded = true,
     path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ctrlp.vim",

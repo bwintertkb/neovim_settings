@@ -57,4 +57,6 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'olimorris/onedarkpro.nvim'
 	use 'rafamadriz/neon'
+	-- line highlight
+	use 'miyakogi/conoline.vim'
 end)
