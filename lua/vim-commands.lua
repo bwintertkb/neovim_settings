@@ -15,6 +15,7 @@ let g:lsc_auto_map = {
     \ 'Completion': 'completefunc',
     \}
 let g:rustfmt_autosave = 1
+inoremap <S-Tab> <C-Q><Tab>
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
 nnoremap <C-c> :NeoTreeFocusToggle<CR>
 nmap <F8> :TagbarToggle<CR>
