@@ -27,4 +27,6 @@ nmap <down> <C-w><down>
 nmap <left> <C-w><left>
 nmap <right> <C-w><right>
 nnoremap <silent> <space>q  <cmd>Trouble<CR>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 ]])
