@@ -59,4 +59,6 @@ return require('packer').startup(function(use)
 	use 'rafamadriz/neon'
 	-- line highlight
 	use 'miyakogi/conoline.vim'
+	-- python autoformatter
+	use 'smbl64/vim-black-macchiato'
 end)
