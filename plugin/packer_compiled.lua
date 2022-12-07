@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["aerial.nvim"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    url = "https://github.com/stevearc/aerial.nvim"
+  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
+  },
+  fzf = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["hlargs.nvim"] = {
     loaded = true,

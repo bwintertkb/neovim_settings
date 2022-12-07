@@ -19,7 +19,11 @@ return require('packer').startup(function(use)
 	use 'kien/ctrlp.vim'
 	-- Rust lang
 	use 'rust-lang/rust.vim'
-	
+	-- Aerial function finder
+	use 'stevearc/aerial.nvim'
+	-- Fuzzy finder
+	use 'junegunn/fzf'
+
 	use 'folke/trouble.nvim'
 	-- LSP
 	use 'hrsh7th/cmp-buffer'
