@@ -13,6 +13,7 @@ nnoremap <silent> gw        <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> [x        <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> ]x        <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> ]s        <cmd>lua vim.diagnostic.show()<CR>
+nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 ]])
 -- pyright
 require("lspconfig").pyright.setup{}
