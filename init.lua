@@ -8,6 +8,10 @@ vim.o.smarttab = true
 vim.o.softtabstop=4
 vim.o.termguicolors = true
 vim.keymap.set('n', '<leader>;', 'A;', {noremap = true})
+-- Add new line above
+vim.keymap.set('n', '<leader>=', 'O<ESC>j', {noremap = true})
+-- Add new line below
+vim.keymap.set('n', '<leader>-', 'o<ESC>k', {noremap = true})
 
 
 require('vim-commands')
