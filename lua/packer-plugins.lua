@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 	-- For commenting gcc & gc
 	use 'terrortylor/nvim-comment'
 	-- File search
-	use 'kien/ctrlp.vim'
+	-- use 'kien/ctrlp.vim'
 	-- Rust lang
 	use 'rust-lang/rust.vim'
 	-- Aerial function finder

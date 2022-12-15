@@ -8,7 +8,19 @@ require('telescope').setup({
         yaml = true,
       }
     }
-  }
-})
+  },
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '-u' -- thats the new thing
+    },
+}})
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<Tab>', builtin.oldfiles)
+vim.keymap.set('n', '<C-p>', builtin.find_files)

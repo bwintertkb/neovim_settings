@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/conoline.vim",
     url = "https://github.com/miyakogi/conoline.vim"
   },
-  ["ctrlp.vim"] = {
-    loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
-    url = "https://github.com/kien/ctrlp.vim"
-  },
   ["ctrlsf.vim"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/ctrlsf.vim",
