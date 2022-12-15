@@ -2,9 +2,8 @@ return require('packer').startup(function(use)
 	-- Packer can handle itself
 	use 'wbthomason/packer.nvim'
 	-- colorschemes
-	use 'navarasu/onedark.nvim'
-	use 'EdenEast/nightfox.nvim'
-	use 'folke/tokyonight.nvim'
+	-- use 'navarasu/onedark.nvim'
+	use 'olimorris/onedarkpro.nvim'
 	-- vim-airline
 	use 'vim-airline/vim-airline'
 	-- dev-icons

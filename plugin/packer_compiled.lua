@@ -144,11 +144,6 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/neon",
     url = "https://github.com/rafamadriz/neon"
   },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
-  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -194,11 +189,6 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
   ["onedarkpro.nvim"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
@@ -239,11 +229,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
