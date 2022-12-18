@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
 	-- use 'kien/ctrlp.vim'
 	-- Rust lang
 	use 'rust-lang/rust.vim'
+	-- Go lang
+	use 'ray-x/go.nvim'
 	-- Aerial function finder
 	use 'stevearc/aerial.nvim'
 	-- Fuzzy finder
