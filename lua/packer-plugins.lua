@@ -60,7 +60,6 @@ return require('packer').startup(function(use)
 	use 'ianks/vim-tsx'
 	use 'jose-elias-alvarez/typescript.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
-	use 'olimorris/onedarkpro.nvim'
 	use 'rafamadriz/neon'
 	-- line highlight
 	use 'miyakogi/conoline.vim'
