@@ -36,6 +36,11 @@ return require('packer').startup(function(use)
 	-- use 'noib3/nvim-completion'
 	use 'hrsh7th/vim-vsnip'
 	use 'hrsh7th/vim-vsnip-integ'
+	-- Tabnine
+	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+	--LSPKind
+	use 'onsails/lspkind.nvim'
+
 	use 'j-hui/fidget.nvim'
 	use 'kosayoda/nvim-lightbulb'
 	use 'm-demare/hlargs.nvim'

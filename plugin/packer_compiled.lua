@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   ["cmp-vsnip"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
@@ -129,10 +134,20 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
   ["hlargs.nvim"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
     url = "https://github.com/m-demare/hlargs.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["neo-tree.nvim"] = {
     loaded = true,
