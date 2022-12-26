@@ -3,7 +3,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- colorschemes
 	use({ 'monsonjeremy/onedark.nvim', branch = 'treesitter' })
-	-- use 'olimorris/onedarkpro.nvim'
+	use 'olimorris/onedarkpro.nvim'
 	-- vim-airline
 	use 'vim-airline/vim-airline'
 	-- dev-icons
