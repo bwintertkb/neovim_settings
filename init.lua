@@ -17,4 +17,3 @@ require('vim-commands')
 require('packer-plugins')
 require('enclose_nav')
 
-vim.api.nvim_set_keymap("n", "<leader>e", ":lua enclose_nav()<CR>", {noremap=true})
