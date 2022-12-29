@@ -84,3 +84,7 @@ require('lspconfig').gopls.setup{
 
 -- Typescript
 require'lspconfig'.tsserver.setup{}
+
+-- Lua 
+require'lspconfig'.sumneko_lua.setup {}
+

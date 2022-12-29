@@ -12,8 +12,9 @@ vim.keymap.set('n', '<leader>;', 'A;', {noremap = true})
 vim.keymap.set('n', '<leader>=', 'O<ESC>j', {noremap = true})
 -- Add new line below
 vim.keymap.set('n', '<leader>-', 'o<ESC>k', {noremap = true})
--- Jump to end of line in insert mode
-vim.keymap.set('i', '<C-e>', '<ESC>A', {noremap = true})
 
 require('vim-commands')
 require('packer-plugins')
+require('enclose_nav')
+
+vim.api.nvim_set_keymap("n", "<leader>e", ":lua enclose_nav()<CR>", {noremap=true})
