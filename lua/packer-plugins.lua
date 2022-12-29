@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
 	use 'vim-airline/vim-airline'
 	-- dev-icons
 	use 'ryanoasis/vim-devicons'
+	
+	-- enclose navigation
+	use 'bwintertkb/enclose_nav.nvim'
 
 	use 'airblade/vim-gitgutter'
 	-- Tagbar for code navigation
