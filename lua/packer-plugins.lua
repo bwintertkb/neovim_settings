@@ -8,10 +8,8 @@ return require('packer').startup(function(use)
 	use 'vim-airline/vim-airline'
 	-- dev-icons
 	use 'ryanoasis/vim-devicons'
-	
 	-- enclose navigation
 	use 'bwintertkb/enclose_nav.nvim'
-
 	use 'airblade/vim-gitgutter'
 	-- Tagbar for code navigation
 	use 'preservim/tagbar'
@@ -73,4 +71,6 @@ return require('packer').startup(function(use)
 	use 'miyakogi/conoline.vim'
 	-- python autoformatter
 	use 'smbl64/vim-black-macchiato'
+	-- Github Copilot
+	use 'github/copilot.vim'
 end)
