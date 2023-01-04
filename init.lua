@@ -8,6 +8,8 @@ vim.o.smarttab = true
 vim.o.softtabstop=4
 vim.o.termguicolors = true
 vim.keymap.set('n', '<leader>;', 'A;', {noremap = true})
+-- All yanks go to clipboard register.
+vim.cmd('set clipboard=unnamedplus')
 -- Add new line above
 vim.keymap.set('n', '<leader>=', 'O<ESC>j', {noremap = true})
 -- Add new line below
