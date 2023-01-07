@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/bartekwinter/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/bartekwinter/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/bartekwinter/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/bartekwinter/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/bartekwinter/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "C:\\Users\\barte\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\barte\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\barte\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\barte\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\barte\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,243 +76,246 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["aerial.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
   },
   ["auto-pairs"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lsp-signature-help"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp-signature-help",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-tabnine"] = {
+    after_files = { "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-tabnine\\after\\plugin\\cmp-tabnine.lua" },
+    load_after = {},
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    needs_bufread = false,
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["conoline.vim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/conoline.vim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\conoline.vim",
     url = "https://github.com/miyakogi/conoline.vim"
   },
   ["copilot.vim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
   ["ctrlsf.vim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/ctrlsf.vim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ctrlsf.vim",
     url = "https://github.com/dyng/ctrlsf.vim"
   },
   ["enclose_nav.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/enclose_nav.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\enclose_nav.nvim",
     url = "https://github.com/bwintertkb/enclose_nav.nvim"
   },
   ["fidget.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
   fzf = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/fzf",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fzf",
     url = "https://github.com/junegunn/fzf"
   },
   ["go.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/go.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\go.nvim",
     url = "https://github.com/ray-x/go.nvim"
   },
   ["hlargs.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hlargs.nvim",
     url = "https://github.com/m-demare/hlargs.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
   },
   ["neo-tree.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   neon = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/neon",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neon",
     url = "https://github.com/rafamadriz/neon"
   },
   ["nui.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-code-action-menu"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-code-action-menu",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-code-action-menu",
     url = "https://github.com/weilbith/nvim-code-action-menu"
   },
   ["nvim-comment"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lightbulb"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lightbulb",
     url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["rust.vim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/rust.vim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
   },
   tagbar = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/tagbar",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tagbar",
     url = "https://github.com/preservim/tagbar"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
   ["typescript-vim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/typescript-vim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\typescript-vim",
     url = "https://github.com/leafgarland/typescript-vim"
   },
   ["typescript.nvim"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/typescript.nvim",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
   ["vim-airline"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-airline",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-black-macchiato"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-black-macchiato",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-black-macchiato",
     url = "https://github.com/smbl64/vim-black-macchiato"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-gitgutter"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-lsc"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-lsc",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-lsc",
     url = "https://github.com/natebosch/vim-lsc"
   },
   ["vim-tsx"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-tsx",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-tsx",
     url = "https://github.com/ianks/vim-tsx"
   },
   ["vim-visual-multi"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-visual-multi",
     url = "https://github.com/mg979/vim-visual-multi"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    path = "C:\\Users\\barte\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
@@ -322,6 +325,11 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-cmp ]]
+vim.cmd [[ packadd cmp-tabnine ]]
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -38,7 +38,11 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/vim-vsnip'
 	use 'hrsh7th/vim-vsnip-integ'
 	-- Tabnine
-	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+	if vim.fn.has('win32') then
+		use {'tzachar/cmp-tabnine', after = "nvim-cmp", run='powershell ./install.ps1', requires = 'hrsh7th/nvim-cmp'}
+	else
+		use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+	end
 	--LSPKind
 	use 'onsails/lspkind.nvim'
 
