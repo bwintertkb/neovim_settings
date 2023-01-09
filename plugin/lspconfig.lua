@@ -88,3 +88,7 @@ require'lspconfig'.tsserver.setup{}
 -- Lua 
 require'lspconfig'.sumneko_lua.setup {}
 
+-- C/C++
+require'lspconfig'.clangd.setup{
+	on_attach = on_attach
+}
