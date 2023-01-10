@@ -14,9 +14,9 @@ require('lazy-lsp').setup {
   configs = {
   },
 }
-require("nvim-lsp-installer").setup({
-
-})
+-- require("nvim-lsp-installer").setup({
+--
+-- })
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
