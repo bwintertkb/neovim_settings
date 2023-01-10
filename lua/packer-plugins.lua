@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
 	-- Fuzzy finder
 	use 'junegunn/fzf'
 
+	use { 'dundalek/lazy-lsp.nvim', requires = { 'neovim/nvim-lspconfig' } }
+
 	use 'folke/trouble.nvim'
 	-- LSP
 	use 'hrsh7th/cmp-buffer'
@@ -52,7 +54,7 @@ return require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'simrat39/rust-tools.nvim'
 	use 'weilbith/nvim-code-action-menu'
-	use 'williamboman/nvim-lsp-installer'
+	-- use 'williamboman/nvim-lsp-installer'
 	use 'kyazdani42/nvim-web-devicons'
 	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()
