@@ -14,7 +14,6 @@ vim.cmd('set clipboard=unnamedplus')
 vim.keymap.set('n', '<leader>=', 'O<ESC>j', {noremap = true})
 -- Add new line below
 vim.keymap.set('n', '<leader>-', 'o<ESC>k', {noremap = true})
-
 require('vim-commands')
 require('packer-plugins')
 

@@ -157,15 +157,20 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
     url = "https://github.com/m-demare/hlargs.nvim"
   },
-  ["lazy-lsp.nvim"] = {
-    loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/lazy-lsp.nvim",
-    url = "https://github.com/dundalek/lazy-lsp.nvim"
-  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["neo-tree.nvim"] = {
     loaded = true,

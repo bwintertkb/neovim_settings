@@ -1,22 +1,17 @@
-require('lazy-lsp').setup {
-  -- By default all available servers are set up. Exclude unwanted or misbehaving servers.
-  excluded_servers = {
-  },
-  -- Default config passed to all servers to specify on_attach callback and other options.
-  default_config = {
-    flags = {
-      debounce_text_changes = 150,
-    },
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
-  },
-  -- Override config for specific servers that will passed down to lspconfig setup.
-  configs = {
-  },
-}
--- require("nvim-lsp-installer").setup({
---
--- })
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
+require("mason-lspconfig").setup( {
+	automatic_installation = true,
+} )
+
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
@@ -34,9 +29,6 @@ nnoremap <silent> ]x        <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> ]s        <cmd>lua vim.diagnostic.show()<CR>
 nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 ]])
-
-
-
 -- pyright
 require("lspconfig").pyright.setup{}
 
@@ -111,6 +103,4 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.sumneko_lua.setup {}
 
 -- C/C++
-require'lspconfig'.clangd.setup{
-	on_attach = on_attach
-}
+require'lspconfig'.clangd.setup{}

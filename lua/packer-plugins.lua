@@ -26,12 +26,11 @@ return require('packer').startup(function(use)
 	-- Fuzzy finder
 	use 'junegunn/fzf'
 
-	-- LSP config
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
-	use { 'dundalek/lazy-lsp.nvim', requires = { 'neovim/nvim-lspconfig' } }
-
 	use 'folke/trouble.nvim'
+	-- LSP installer
+	use "williamboman/mason.nvim"
+	use 'williamboman/mason-lspconfig.nvim'
+	use 'neovim/nvim-lspconfig'
 	-- LSP
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-nvim-lsp'
