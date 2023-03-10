@@ -1,22 +1,19 @@
-require('lazy-lsp').setup {
-  -- By default all available servers are set up. Exclude unwanted or misbehaving servers.
-  excluded_servers = {
-  },
-  -- Default config passed to all servers to specify on_attach callback and other options.
-  default_config = {
-    flags = {
-      debounce_text_changes = 150,
-    },
-    -- on_attach = on_attach,
-    -- capabilities = capabilities,
-  },
-  -- Override config for specific servers that will passed down to lspconfig setup.
-  configs = {
-  },
-}
--- require("nvim-lsp-installer").setup({
---
--- })
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗"
+		}
+	}
+})
+
+require("mason-lspconfig").setup({
+	automatic_installation = true,
+})
+-- formating
+vim.keymap.set("n", "<Leader>p", ":lua vim.lsp.buf.format()<CR>")
+
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
@@ -34,83 +31,101 @@ nnoremap <silent> ]x        <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> ]s        <cmd>lua vim.diagnostic.show()<CR>
 nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 ]])
-
-
-
 -- pyright
-require("lspconfig").pyright.setup{}
+require("lspconfig").pyright.setup {}
 
 --rust
 local opts = {
-  -- rust-tools options
-  tools = {
-    autoSetHints = false,
-    hover_with_actions = false,
-    inlay_hints = {
-      show_parameter_hints = false,
-      parameter_hints_prefix = "",
-      other_hints_prefix = "",
-      },
-    },
+	-- rust-tools options
+	tools = {
+		hover_with_actions = false,
+		executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
+		reload_workspace_from_cargo_toml = true,
+		inlay_hints = {
+			auto = true,
+			only_current_line = false,
+			show_parameter_hints = true,
+			parameter_hints_prefix = "<-",
+			other_hints_prefix = "=>",
+			max_len_align = false,
+			max_len_align_padding = 1,
+			right_align = false,
+			right_align_padding = 7,
+			highlight = "Comment",
+		}
+	},
 
-  -- all the opts to send to nvim-lspconfig
-  -- these override the defaults set by rust-tools.nvim
-  -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-  -- https://rust-analyzer.github.io/manual.html#features
-  server = {
-    settings = {
-      ["rust-analyzer"] = {
-        assist = {
-          importEnforceGranularity = true,
-          importPrefix = "crate"
-          },
-        cargo = {
-          allFeatures = true
-          },
-        checkOnSave = {
-          -- default: `cargo check`
-          command = "clippy"
-          },
-        },
-        inlayHints = {
-          lifetimeElisionHints = {
-            enable = false,
-            useParameterNames = false 
-          },
-		  
-        },
-      }
-    },
+	-- all the opts to send to nvim-lspconfig
+	-- these override the defaults set by rust-tools.nvim
+	-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+	-- https://rust-analyzer.github.io/manual.html#features
+	server = {
+		settings = {
+			["rust-analyzer"] = {
+				assist = {
+					importEnforceGranularity = true,
+					importPrefix = "crate"
+				},
+				cargo = {
+					allFeatures = true
+				},
+				checkOnSave = {
+					-- default: `cargo check`
+					command = "clippy"
+				},
+			},
+			inlayHints = {
+				lifetimeElisionHints = {
+					enable = false,
+					useParameterNames = false
+				},
+
+			},
+		}
+	},
 }
 require('rust-tools').setup(opts)
 
 --Go
-require('lspconfig').gopls.setup{
-	cmd = {'gopls'},
-  settings = {
-    gopls = {
-      analyses = {
-        nilness = true,
-        unusedparams = true,
-        unusedwrite = true,
-        useany = true,
-      },
-      experimentalPostfixCompletions = true,
-      gofumpt = true,
-      staticcheck = true,
-      usePlaceholders = true,
-    },
-  },
+require('lspconfig').gopls.setup {
+	cmd = { 'gopls' },
+	settings = {
+		gopls = {
+			analyses = {
+				nilness = true,
+				unusedparams = true,
+				unusedwrite = true,
+				useany = true,
+			},
+			experimentalPostfixCompletions = true,
+			gofumpt = true,
+			staticcheck = true,
+			usePlaceholders = true,
+		},
+	},
 	on_attach = on_attach,
 }
 
 -- Typescript
-require'lspconfig'.tsserver.setup{}
+require 'lspconfig'.tsserver.setup {}
 
--- Lua 
-require'lspconfig'.sumneko_lua.setup {}
+-- Lua
+require 'lspconfig'.lua_ls.setup {}
 
 -- C/C++
-require'lspconfig'.clangd.setup{
-	on_attach = on_attach
+require 'lspconfig'.clangd.setup {}
+
+-- Solidity
+require 'lspconfig'.solidity.setup {}
+
+-- Bash
+require 'lspconfig'.bashls.setup {}
+
+-- CSS
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
 }

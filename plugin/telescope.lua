@@ -23,4 +23,4 @@ require('telescope').setup({
 }})
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<Tab>', builtin.oldfiles)
-vim.keymap.set('n', '<C-p>', builtin.find_files)
+vim.keymap.set('n', '<C-p>', '<CMD>Telescope find_files<CR>')

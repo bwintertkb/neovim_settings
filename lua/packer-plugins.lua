@@ -10,6 +10,9 @@ return require('packer').startup(function(use)
 	use 'ryanoasis/vim-devicons'
 	-- enclose navigation
 	use 'bwintertkb/enclose_nav.nvim'
+	-- visual wrap
+	use 'bwintertkb/visual_wrap.nvim'
+	
 	use 'airblade/vim-gitgutter'
 	-- Tagbar for code navigation
 	use 'preservim/tagbar'
@@ -26,12 +29,11 @@ return require('packer').startup(function(use)
 	-- Fuzzy finder
 	use 'junegunn/fzf'
 
-	-- LSP config
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
-	use { 'dundalek/lazy-lsp.nvim', requires = { 'neovim/nvim-lspconfig' } }
-
 	use 'folke/trouble.nvim'
+	-- LSP installer
+	use "williamboman/mason.nvim"
+	use 'williamboman/mason-lspconfig.nvim'
+	use 'neovim/nvim-lspconfig'
 	-- LSP
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -44,9 +46,9 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/vim-vsnip-integ'
 	-- Tabnine
 	if vim.fn.has('win32') then
-		use {'tzachar/cmp-tabnine', after = "nvim-cmp", run='powershell ./install.ps1', requires = 'hrsh7th/nvim-cmp'}
+		use { 'tzachar/cmp-tabnine', after = "nvim-cmp", run = 'powershell ./install.ps1', requires = 'hrsh7th/nvim-cmp' }
 	else
-		use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+		use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 	end
 	--LSPKind
 	use 'onsails/lspkind.nvim'
@@ -57,16 +59,17 @@ return require('packer').startup(function(use)
 	use 'simrat39/rust-tools.nvim'
 	use 'weilbith/nvim-code-action-menu'
 	use 'kyazdani42/nvim-web-devicons'
-	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+	use { "akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()
-		end}
+	end }
 	use 'nvim-lua/plenary.nvim'
 	use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0'}
+		'nvim-telescope/telescope.nvim', tag = '0.1.0'
+	}
 	use 'natebosch/vim-lsc'
 	use 'mg979/vim-visual-multi'
 	use 'dyng/ctrlsf.vim'
-	use 'jiangmiao/auto-pairs' 
+	use 'jiangmiao/auto-pairs'
 	use 'MunifTanjim/nui.nvim'
 	use 'nvim-neo-tree/neo-tree.nvim'
 	use 'leafgarland/typescript-vim'
@@ -80,4 +83,19 @@ return require('packer').startup(function(use)
 	use 'smbl64/vim-black-macchiato'
 	-- Github Copilot
 	use 'github/copilot.vim'
+	-- Surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end
+	})
+	-- Formatter
+	use 'jose-elias-alvarez/null-ls.nvim'
+	-- Autotag
+	use 'windwp/nvim-ts-autotag'
+
 end)
