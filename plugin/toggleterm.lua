@@ -1,4 +1,6 @@
-if vim.fn.has("unix") then
+if vim.fn.has("win32") then
+    vim.o.shell = "cmd.exe"
+else
     vim.o.shell = "/bin/bash"
 end
 
