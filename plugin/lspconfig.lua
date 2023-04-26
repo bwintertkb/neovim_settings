@@ -130,5 +130,3 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
 
--- Zig
-require'lspconfig'.zls.setup{}
