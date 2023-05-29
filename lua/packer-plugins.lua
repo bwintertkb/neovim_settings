@@ -97,5 +97,6 @@ return require('packer').startup(function(use)
 	use 'jose-elias-alvarez/null-ls.nvim'
 	-- Autotag
 	use 'windwp/nvim-ts-autotag'
-
+	-- Harpoon
+	use 'ThePrimeagen/harpoon'	
 end)
