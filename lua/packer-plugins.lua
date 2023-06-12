@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
 	--LSPKind
 	use 'onsails/lspkind.nvim'
 
-	use 'j-hui/fidget.nvim'
+	use {'j-hui/fidget.nvim', tag = 'legacy'}
 	use 'kosayoda/nvim-lightbulb'
 	use 'm-demare/hlargs.nvim'
 	use 'simrat39/rust-tools.nvim'
