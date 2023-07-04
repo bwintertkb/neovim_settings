@@ -11,7 +11,6 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
--- formating
 
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
@@ -30,9 +29,8 @@ nnoremap <silent> ]x        <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> ]s        <cmd>lua vim.diagnostic.show()<CR>
 nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.format()<CR>
-
 ]])
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+vim.cmd([[ autocmd BufWritePre * lua vim.lsp.buf.format() ]])
 
 -- pyright
 require("lspconfig").pyright.setup({})
@@ -74,16 +72,7 @@ local opts = {
 				},
 				checkOnSave = {
 					-- default: `cargo check`
-					enable = true,
 					command = "clippy",
-				},
-				rustfmt = {
-					overrideCommand = {
-						"rustup",
-						"run",
-						"stable",
-						"rustfmt",
-					},
 				},
 			},
 			inlayHints = {
