@@ -3,16 +3,15 @@ require("mason").setup({
 		icons = {
 			package_installed = "✓",
 			package_pending = "➜",
-			package_uninstalled = "✗"
-		}
-	}
+			package_uninstalled = "✗",
+		},
+	},
 })
 
 require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 -- formating
-vim.keymap.set("n", "<Leader>p", ":lua vim.lsp.buf.format()<CR>")
 
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
@@ -30,9 +29,13 @@ nnoremap <silent> [x        <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> ]x        <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> ]s        <cmd>lua vim.diagnostic.show()<CR>
 nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.format()<CR>
+
 ]])
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
 -- pyright
-require("lspconfig").pyright.setup {}
+require("lspconfig").pyright.setup({})
 
 --rust
 local opts = {
@@ -52,7 +55,7 @@ local opts = {
 			right_align = false,
 			right_align_padding = 7,
 			highlight = "Comment",
-		}
+		},
 	},
 
 	-- all the opts to send to nvim-lspconfig
@@ -64,31 +67,39 @@ local opts = {
 			["rust-analyzer"] = {
 				assist = {
 					importEnforceGranularity = true,
-					importPrefix = "crate"
+					importPrefix = "crate",
 				},
 				cargo = {
-					allFeatures = true
+					allFeatures = true,
 				},
 				checkOnSave = {
 					-- default: `cargo check`
-					command = "clippy"
+					enable = true,
+					command = "clippy",
+				},
+				rustfmt = {
+					overrideCommand = {
+						"rustup",
+						"run",
+						"stable",
+						"rustfmt",
+					},
 				},
 			},
 			inlayHints = {
 				lifetimeElisionHints = {
 					enable = false,
-					useParameterNames = false
+					useParameterNames = false,
 				},
-
 			},
-		}
+		},
 	},
 }
-require('rust-tools').setup(opts)
+require("rust-tools").setup(opts)
 
 --Go
-require('lspconfig').gopls.setup {
-	cmd = { 'gopls' },
+require("lspconfig").gopls.setup({
+	cmd = { "gopls" },
 	settings = {
 		gopls = {
 			analyses = {
@@ -104,29 +115,28 @@ require('lspconfig').gopls.setup {
 		},
 	},
 	on_attach = on_attach,
-}
+})
 
 -- Typescript
-require 'lspconfig'.tsserver.setup {}
+require("lspconfig").tsserver.setup({})
 
 -- Lua
-require 'lspconfig'.lua_ls.setup {}
+require("lspconfig").lua_ls.setup({})
 
 -- C/C++
-require 'lspconfig'.clangd.setup {}
+require("lspconfig").clangd.setup({})
 
 -- Solidity
-require 'lspconfig'.solidity.setup {}
+require("lspconfig").solidity.setup({})
 
 -- Bash
-require 'lspconfig'.bashls.setup {}
+require("lspconfig").bashls.setup({})
 
 -- CSS
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.cssls.setup {
-  capabilities = capabilities,
-}
-
+require("lspconfig").cssls.setup({
+	capabilities = capabilities,
+})
