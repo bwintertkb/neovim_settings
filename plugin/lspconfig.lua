@@ -30,7 +30,6 @@ nnoremap <silent> ]s        <cmd>lua vim.diagnostic.show()<CR>
 nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.format()<CR>
 ]])
-vim.cmd([[ autocmd BufWritePre * lua vim.lsp.buf.format() ]])
 
 -- pyright
 require("lspconfig").pyright.setup({})
