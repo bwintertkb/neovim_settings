@@ -131,3 +131,6 @@ require("lspconfig").cssls.setup({
 
 -- Docker
 require("lspconfig").dockerls.setup({})
+
+-- ASM
+require("lspconfig").asm_lsp.setup({})
