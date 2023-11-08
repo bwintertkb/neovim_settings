@@ -134,3 +134,16 @@ require("lspconfig").dockerls.setup({})
 
 -- ASM
 require("lspconfig").asm_lsp.setup({})
+
+-- YAML
+require("lspconfig")["yamlls"].setup({
+	settings = {
+		yaml = {
+			format = {
+				enable = true,
+			},
+			schemas = { kubernetes = "*.yaml" }
+		},
+	},
+})
+
