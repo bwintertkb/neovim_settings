@@ -142,7 +142,7 @@ require("lspconfig")["yamlls"].setup({
 			format = {
 				enable = true,
 			},
-			schemas = { kubernetes = "*.yaml" }
+			schemas = { kubernetes = { "*.yaml", "*.yml" }}
 		},
 	},
 })
