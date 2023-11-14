@@ -3,6 +3,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- colorschemes
 	use("navarasu/onedark.nvim")
+	use("bluz71/vim-moonfly-colors")
 	-- use 'olimorris/onedarkpro.nvim'
 	-- vim-airline
 	use("vim-airline/vim-airline")
