@@ -147,5 +147,8 @@ require("lspconfig")["yamlls"].setup({
 	},
 })
 
+-- HTML
+require("lspconfig").html.setup{}
+
 -- HTMX
 require("lspconfig").htmx.setup{}
