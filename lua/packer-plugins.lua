@@ -3,7 +3,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- colorschemes
 	use("navarasu/onedark.nvim")
-	use("bluz71/vim-moonfly-colors")
+	use("bwintertkb/vim-moonfly-colors")
 	-- use 'olimorris/onedarkpro.nvim'
 	-- vim-airline
 	use("vim-airline/vim-airline")
@@ -110,4 +110,7 @@ return require("packer").startup(function(use)
 	use("windwp/nvim-ts-autotag")
 	-- Harpoon
 	use("ThePrimeagen/harpoon")
-end)
+	-- Midnight
+	use("bwintertkb/midnight.nvim")
+end
+)

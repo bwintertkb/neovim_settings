@@ -177,6 +177,11 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["midnight.nvim"] = {
+    loaded = true,
+    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/midnight.nvim",
+    url = "https://github.com/bwintertkb/midnight.nvim"
+  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
@@ -327,7 +332,7 @@ _G.packer_plugins = {
   ["vim-moonfly-colors"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
+    url = "https://github.com/bwintertkb/vim-moonfly-colors"
   },
   ["vim-tsx"] = {
     loaded = true,

@@ -1,3 +1,3 @@
 git pull
 
-rsync -aP --exclude={'*.bash', '*.git'} ./* ~/.config/nvim
+rsync -aP --exclude=*.bash ./* ~/.config/nvim
