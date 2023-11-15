@@ -147,3 +147,5 @@ require("lspconfig")["yamlls"].setup({
 	},
 })
 
+-- HTMX
+require("lspconfig").htmx.setup{}
