@@ -1,2 +1,2 @@
-vim.g.moonflyItalics = false
-vim.cmd("colorscheme moonfly")
+-- vim.g.moonflyItalics = false
+-- vim.cmd("colorscheme moonfly")
