@@ -334,11 +334,6 @@ _G.packer_plugins = {
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-lsc",
     url = "https://github.com/natebosch/vim-lsc"
   },
-  ["vim-moonfly-colors"] = {
-    loaded = true,
-    path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bwintertkb/vim-moonfly-colors"
-  },
   ["vim-tsx"] = {
     loaded = true,
     path = "/home/bartekwinter/.local/share/nvim/site/pack/packer/start/vim-tsx",

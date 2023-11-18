@@ -1,6 +1,6 @@
--- require('midnight').setup { }
---
---
---
--- vim.cmd("colorscheme midnight")
---
+require('midnight').setup { }
+
+
+
+vim.cmd("colorscheme midnight")
+
