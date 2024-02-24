@@ -157,3 +157,6 @@ require'lspconfig'.html.setup {
 }
 -- HTMX
 require("lspconfig").htmx.setup{}
+
+-- Zig
+require("lspconfig").zls.setup{}
