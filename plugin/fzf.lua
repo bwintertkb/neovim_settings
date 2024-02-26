@@ -3,6 +3,3 @@ vim.keymap.set("n", "<c-u>",
 
 vim.keymap.set("n", "<c-p>",
   "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
-
-vim.keymap.set("n", "<Tab>",
-  "<cmd>lua require('fzf-lua').oldfiles()<CR>", { silent = true })
