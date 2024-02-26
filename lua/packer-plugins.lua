@@ -25,7 +25,7 @@ return require("packer").startup(function(use)
 	use("stevearc/aerial.nvim")
 	-- Fuzzy finder
 	use("junegunn/fzf")
-	use("ibhagwan/fzf-lua")
+	use("bwintertkb/fzf-lua")
 
 	use("folke/trouble.nvim")
 	-- LSP installer
