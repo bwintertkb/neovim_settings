@@ -1,4 +1,4 @@
- require('telescope').setup({
+require('telescope').setup({
    extensions = {
      aerial = {
        -- Display symbols as <root>.<parent>.<symbol>
