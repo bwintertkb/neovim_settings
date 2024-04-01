@@ -2,12 +2,7 @@ return require("packer").startup(function(use)
 	-- Packer can handle itself
 	use("wbthomason/packer.nvim")
 	-- colorschemes
-	use("navarasu/onedark.nvim")
-	-- use("bwintertkb/vim-moonfly-colors")
-	use("bwintertkb/midnight.nvim")
-	-- use("dasupradyumna/midnight.nvim")
-	-- use("/home/bartekwinter/midnight.nvim")
-	use('olimorris/onedarkpro.nvim')
+	use("bwintertkb/no-clown-fiesta.nvim")
 	-- vim-airline
 	use("vim-airline/vim-airline")
 	-- dev-icons
@@ -16,14 +11,12 @@ return require("packer").startup(function(use)
 	use("bwintertkb/enclose_nav.nvim")
 	-- visual wrap
 	use("bwintertkb/visual_wrap.nvim")
-
+	
 	use("airblade/vim-gitgutter")
 	-- Tagbar for code navigation
 	use("preservim/tagbar")
 	-- For commenting gcc & gc
 	use("terrortylor/nvim-comment")
-	-- File search
-	-- use 'kien/ctrlp.vim'
 	-- Rust lang
 	use("rust-lang/rust.vim")
 	-- Go lang
@@ -32,6 +25,7 @@ return require("packer").startup(function(use)
 	use("stevearc/aerial.nvim")
 	-- Fuzzy finder
 	use("junegunn/fzf")
+	use("bwintertkb/fzf-lua")
 
 	use("folke/trouble.nvim")
 	-- LSP installer
@@ -61,7 +55,6 @@ return require("packer").startup(function(use)
 	end
 	--LSPKind
 	use("onsails/lspkind.nvim")
-
 	use({ "j-hui/fidget.nvim", tag = "legacy" })
 	use("kosayoda/nvim-lightbulb")
 	use("m-demare/hlargs.nvim")
@@ -78,7 +71,7 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
+		tag = "0.1.4",
 	})
 	use("natebosch/vim-lsc")
 	use("mg979/vim-visual-multi")
@@ -111,7 +104,12 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	-- Autotag
 	use("windwp/nvim-ts-autotag")
-	-- Harpoon
-	use("ThePrimeagen/harpoon")
+	-- Debugger
+	use("nvim-neotest/nvim-nio")
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+
+	-- Git blame
+	use("f-person/git-blame.nvim")
 end
 )
