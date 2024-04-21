@@ -160,3 +160,6 @@ require("lspconfig").htmx.setup{}
 
 -- Zig
 require("lspconfig").zls.setup{}
+
+-- Svelte
+require("lspconfig").svelte.setup{}
