@@ -42,3 +42,5 @@ require('copilot').setup({
   server_opts_overrides = {},
 })
 
+vim.api.nvim_set_keymap('n', '<leader>g', ':Copilot enable<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>G', ':Copilot disable<CR>', {noremap = true, silent = true})
