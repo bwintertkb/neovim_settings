@@ -108,6 +108,7 @@ return require("packer").startup(function(use)
 	use("nvim-neotest/nvim-nio")
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
+	use("theHamsta/nvim-dap-virtual-text")
 
 	-- Git blame
 	use("f-person/git-blame.nvim")
