@@ -7,6 +7,7 @@ vim.o.shiftwidth = 4
 vim.o.smarttab = true
 vim.o.softtabstop=4
 vim.o.termguicolors = true
+vim.o.scrolloff = 10
 vim.keymap.set('n', '<leader>;', 'A;', {noremap = true})
 -- All yanks go to clipboard register.
 vim.cmd('set clipboard=unnamedplus')
