@@ -114,3 +114,6 @@ map('n', '<leader>bp', '<cmd>lua require("dap").toggle_breakpoint()<CR>', opts)
 
 -- Toggle DAP UI with F1
 map('n', '<F1>', '<cmd>lua require("dapui").toggle()<CR>', opts)
+
+require("nvim-dap-virtual-text").setup()
+
