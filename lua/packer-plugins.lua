@@ -11,7 +11,7 @@ return require("packer").startup(function(use)
 	use("bwintertkb/enclose_nav.nvim")
 	-- visual wrap
 	use("bwintertkb/visual_wrap.nvim")
-	
+
 	use("airblade/vim-gitgutter")
 	-- Tagbar for code navigation
 	use("preservim/tagbar")
@@ -90,6 +90,13 @@ return require("packer").startup(function(use)
 	use("smbl64/vim-black-macchiato")
 	-- Github Copilot
 	use("zbirenbaum/copilot.lua")
+	use {
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end
+	}
 	-- Surround
 	use({
 		"kylechui/nvim-surround",
