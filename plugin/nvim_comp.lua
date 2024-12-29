@@ -1,6 +1,6 @@
 -- Set up nvim-cmp.
   local cmp = require'cmp'
-				
+  			
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -17,7 +17,7 @@
     },
     preselect = cmp.PreselectMode.None,
     mapping = cmp.mapping.preset.insert({
-	   ["<Tab>"] = cmp.mapping(function(fallback)
+  	   ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif vim.fn["vsnip#available"](1) == 1 then
@@ -26,7 +26,7 @@
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
     end, { "i", "s" }),
-
+  
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
@@ -41,9 +41,11 @@
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
+	  { name = 'copilot' },
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
-	  { name = 'cmp_tabnine' }
+  	  { name = 'cmp_tabnine' },
+  	  -- { name = 'tabnine' }
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -51,7 +53,7 @@
       { name = 'buffer' },
     })
   })
-
+  
   -- Set configuration for specific filetype.
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
@@ -60,7 +62,7 @@
       { name = 'buffer' },
     })
   })
-
+  
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
@@ -68,7 +70,7 @@
       { name = 'buffer' }
     }
   })
-
+  
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   -- cmp.setup.cmdline(':', {
   --   mapping = cmp.mapping.preset.cmdline(),
