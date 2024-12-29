@@ -17,5 +17,9 @@ vim.keymap.set('n', '<leader>=', 'O<ESC>j', {noremap = true})
 vim.keymap.set('n', '<leader>-', 'o<ESC>k', {noremap = true})
 -- Restart nvim 
 vim.keymap.set('n', '<leader>sr', ':luafile %<CR>', {noremap = true})
+-- Map move to start of line
+vim.keymap.set('n', 'H', '^', {noremap = true})
+-- Map move to end of line
+vim.keymap.set('n', 'L', '$', {noremap = true})
 require('vim-commands')
 require('packer-plugins')
