@@ -42,8 +42,8 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp', priority = 100 },
+		{ name = 'copilot', priority = 50 },
 		{ name = 'cmp_tabnine', priority = 50 },
-		{ name = 'copilot', priority = 25 },
 		{ name = 'vsnip', priority = 25 }, -- For vsnip users.
 		-- { name = 'tabnine' }
 		-- { name = 'luasnip' }, -- For luasnip users.
