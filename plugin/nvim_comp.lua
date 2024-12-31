@@ -41,10 +41,10 @@ cmp.setup({
 		['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	}),
 	sources = cmp.config.sources({
-		{ name = 'copilot', priority = 50 },
 		{ name = 'nvim_lsp', priority = 100 },
-		{ name = 'vsnip' }, -- For vsnip users.
-		{ name = 'cmp_tabnine' },
+		{ name = 'cmp_tabnine', priority = 50 },
+		{ name = 'copilot', priority = 25 },
+		{ name = 'vsnip', priority = 25 }, -- For vsnip users.
 		-- { name = 'tabnine' }
 		-- { name = 'luasnip' }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.
