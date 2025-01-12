@@ -1,5 +1,6 @@
 -- By default copilot is on, <leader>G in normal mode to toggle
 _G.cmp_source_toggle = true
+_G.cmp_source_first_run = true
 
 _G.setup_cmp = function()
 	local sources
@@ -92,6 +93,21 @@ _G.setup_cmp = function()
 			{ name = 'cmdline' }
 		})
 	})
+
+
+	if _G.cmp_source_first_run then
+		_G.cmp_source_first_run = false
+		return
+	end
+
+	local message = _G.cmp_source_toggle and "nvim-cmp Copilot enabled" or "nvim-cmp Copilot disabled"
+
+	vim.api.nvim_echo({{message, "Normal"}}, false, {})
+
+	-- Clear the message after 3 seconds (3000 ms)
+	vim.defer_fn(function()
+	    vim.cmd("echo ''")
+	end, 3000)
 end
 
 setup_cmp()
