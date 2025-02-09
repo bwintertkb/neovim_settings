@@ -78,7 +78,10 @@ return require("packer").startup(function(use)
 	use("dyng/ctrlsf.vim")
 	use("jiangmiao/auto-pairs")
 	use("MunifTanjim/nui.nvim")
-	use("nvim-neo-tree/neo-tree.nvim")
+	use {
+	  "nvim-neo-tree/neo-tree.nvim",
+	  commit = "8c75e8a2949cd6cd35525799200a8d34471ee9eb"
+	}
 	use("leafgarland/typescript-vim")
 	use("ianks/vim-tsx")
 	use("jose-elias-alvarez/typescript.nvim")
