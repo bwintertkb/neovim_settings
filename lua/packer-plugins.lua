@@ -97,6 +97,7 @@ return require("packer").startup(function(use)
 			require("copilot_cmp").setup()
 		end
 	}
+	use("CopilotC-Nvim/CopilotChat.nvim")
 	-- Surround
 	use({
 		"kylechui/nvim-surround",
