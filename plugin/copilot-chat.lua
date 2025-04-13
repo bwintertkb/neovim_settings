@@ -4,16 +4,16 @@ require("CopilotChat").setup {
 
 	system_prompt = 'COPILOT_INSTRUCTIONS', -- System prompt to use (can be specified manually in prompt via /).
 
-	model = 'claude-3.7-sonnet-thought',          -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
-	agent = 'copilot',                    -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
-	context = nil,                        -- Default context or array of contexts to use (can be specified manually in prompt via #).
-	sticky = nil,                         -- Default sticky prompt or array of sticky prompts to use at start of every new chat.
+	model = 'gemini-2.5-pro',            -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
+	agent = 'copilot',                   -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
+	context = nil,                       -- Default context or array of contexts to use (can be specified manually in prompt via #).
+	sticky = nil,                        -- Default sticky prompt or array of sticky prompts to use at start of every new chat.
 
-	temperature = 0.1,                    -- GPT result temperature
-	headless = false,                     -- Do not write to chat buffer and use history (useful for using custom processing)
-	stream = nil,                         -- Function called when receiving stream updates (returned string is appended to the chat buffer)
-	callback = nil,                       -- Function called when full response is received (retuned string is stored to history)
-	remember_as_sticky = true,            -- Remember model/agent/context as sticky prompts when asking questions
+	temperature = 0.1,                   -- GPT result temperature
+	headless = false,                    -- Do not write to chat buffer and use history (useful for using custom processing)
+	stream = nil,                        -- Function called when receiving stream updates (returned string is appended to the chat buffer)
+	callback = nil,                      -- Function called when full response is received (retuned string is stored to history)
+	remember_as_sticky = true,           -- Remember model/agent/context as sticky prompts when asking questions
 
 	-- default selection
 	-- see select.lua for implementation
@@ -24,25 +24,25 @@ require("CopilotChat").setup {
 	-- default window options
 	window = {
 		layout = 'vertical', -- 'vertical', 'horizontal', 'float', 'replace'
-		width = 0.5,        -- fractional width of parent, or absolute width in columns when > 1
-		height = 0.5,       -- fractional height of parent, or absolute height in rows when > 1
+		width = 0.5,      -- fractional width of parent, or absolute width in columns when > 1
+		height = 0.5,     -- fractional height of parent, or absolute height in rows when > 1
 		-- Options below only apply to floating windows
 		relative = 'editor', -- 'editor', 'win', 'cursor', 'mouse'
-		border = 'single',  -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
-		row = nil,          -- row position of the window, default is centered
-		col = nil,          -- column position of the window, default is centered
+		border = 'single', -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
+		row = nil,        -- row position of the window, default is centered
+		col = nil,        -- column position of the window, default is centered
 		title = 'Copilot Chat', -- title of chat window
-		footer = nil,       -- footer of chat window
-		zindex = 1,         -- determines if window is on top or below other floating windows
+		footer = nil,     -- footer of chat window
+		zindex = 1,       -- determines if window is on top or below other floating windows
 	},
 
-	show_help = true,               -- Shows help message as virtual lines when waiting for user input
-	highlight_selection = true,     -- Highlight selection
-	highlight_headers = true,       -- Highlight headers in chat, disable if using markdown renderers (like render-markdown.nvim)
+	show_help = true,              -- Shows help message as virtual lines when waiting for user input
+	highlight_selection = true,    -- Highlight selection
+	highlight_headers = true,      -- Highlight headers in chat, disable if using markdown renderers (like render-markdown.nvim)
 	references_display = 'virtual', -- 'virtual', 'write', Display references in chat as virtual text or write to buffer
-	auto_follow_cursor = true,      -- Auto-follow cursor in chat
-	auto_insert_mode = false,       -- Automatically enter insert mode when opening window and on new prompt
-	insert_at_end = false,          -- Move cursor to end of buffer when inserting text
+	auto_follow_cursor = true,     -- Auto-follow cursor in chat
+	auto_insert_mode = false,      -- Automatically enter insert mode when opening window and on new prompt
+	insert_at_end = false,         -- Move cursor to end of buffer when inserting text
 	clear_chat_on_new_prompt = false, -- Clears chat on every new prompt
 
 	-- Static config starts here (can be configured only via setup function)
@@ -149,5 +149,17 @@ require("CopilotChat").setup {
 }
 
 
-vim.api.nvim_set_keymap('n', '<leader>g', ':CopilotChatToggle <CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>l', ':CopilotChatReset <CR>', { noremap = true, silent = true })
+-- Keymaps
+local map = vim.keymap.set
+
+-- Normal mode
+map('n', '<leader>so', ':CopilotChatToggle<CR>', { desc = 'Toggle Copilot Chat', noremap = true, silent = true })
+map('n', '<leader>sm', ':CopilotChatCommit<CR>', { desc = 'Generate Commit Message', noremap = true, silent = true })
+map('n', '<leader>sr', ':CopilotChatReset<CR>', { desc = 'Reset Copilot Chat Window', noremap = true, silent = true })
+
+-- Visual mode
+map('v', '<leader>se', ':CopilotChatExplain<CR>', { desc = 'Explain code', noremap = true, silent = true })
+map('v', '<leader>st', ':CopilotChatTests<CR>', { desc = 'Generate Tests', noremap = true, silent = true })
+map('v', '<leader>sf', ':CopilotChatFix<CR>', { desc = 'Fix Code Issues', noremap = true, silent = true })
+map('v', '<leader>sr', ':CopilotChatReview<CR>', { desc = 'Review Code', noremap = true, silent = true })
+map('v', '<leader>sd', ':CopilotChatDocs<CR>', { desc = 'Generate docs', noremap = true, silent = true })
