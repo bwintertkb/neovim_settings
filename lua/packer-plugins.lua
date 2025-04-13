@@ -120,5 +120,8 @@ return require("packer").startup(function(use)
 
 	-- Git blame
 	use("f-person/git-blame.nvim")
+
+	-- Command line
+	use('hrsh7th/cmp-cmdline')
 end
 )
