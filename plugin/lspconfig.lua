@@ -8,9 +8,10 @@ require("mason").setup({
 	},
 })
 
-require("mason-lspconfig").setup({
-	automatic_installation = true,
-})
+-- require("mason-lspconfig").setup({
+--   -- Enable automatic installation of servers managed by mason-lspconfig:
+--   automatic_installation = false,
+-- })
 
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
@@ -31,6 +32,10 @@ nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.format()<CR>
 ]])
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- Tell the server that we support adjusted text edits.
+capabilities.textDocument.completion.completionItem.insertTextMode = 2
+
 -- pyright
 require("lspconfig").pyright.setup({})
 
@@ -39,19 +44,19 @@ local opts = {
 	-- rust-tools options
 	tools = {
 		hover_with_actions = false,
-		executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
+		executor = require("rust-tools/executors").quickfix, -- can be quickfix or termopen
 		reload_workspace_from_cargo_toml = true,
 		inlay_hints = {
-			auto = true,
-			only_current_line = false,
-			show_parameter_hints = true,
+			auto                   = true,
+			only_current_line      = false,
+			show_parameter_hints   = true,
 			parameter_hints_prefix = "<-",
-			other_hints_prefix = "=>",
-			max_len_align = false,
-			max_len_align_padding = 1,
-			right_align = false,
-			right_align_padding = 7,
-			highlight = "Comment",
+			other_hints_prefix     = "=>",
+			max_len_align          = false,
+			max_len_align_padding  = 1,
+			right_align            = false,
+			right_align_padding    = 7,
+			highlight              = "Comment",
 		},
 	},
 
@@ -62,29 +67,48 @@ local opts = {
 	server = {
 		settings = {
 			["rust-analyzer"] = {
+				-- inlayHints = {
+				-- 	typeHints         = { enable = false }, -- ← turn off `let x: Type = ...` hints
+				-- 	parameterHints    = { enable = true }, -- keep parameter name hints
+				-- 	chainingHints     = { enable = true }, -- keep method‐chain result type hints
+				-- 	closingBraceHints = { enable = true }, -- keep “} // impl Foo” hints
+				-- 	-- you can leave all the rest at their defaults:
+				-- 	-- bindingModeHints, closureReturnTypeHints, lifetimeElisionHints, etc.
+				-- },
+				sematicHighliting = {
+					enabled = false,
+				},
 				assist = {
 					importEnforceGranularity = true,
 					importPrefix = "crate",
 				},
 				cargo = {
-					allFeatures = true,
+					allFeatures = false,
+					targetDir = "target/ra"
 				},
 				checkOnSave = {
+					-- enable = false
+					enable = true,
+					invocationStrategy = "once"
 					-- default: `cargo check`
-					command = "clippy",
+					-- command = "clippy",
+					-- command = "cargo check",
 				},
+				completion = {
+					autoimport = {
+						enable = true,
+					},
+					callable = {
+						snippets = "none"
+					}
+				}
 			},
-			inlayHints = {
-				lifetimeElisionHints = {
-					enable = false,
-					useParameterNames = false,
-				},
-			},
+
 		},
 	},
 }
 require("rust-tools").setup(opts)
-
+--
 --Go
 require("lspconfig").gopls.setup({
 	cmd = { "gopls" },
@@ -106,7 +130,7 @@ require("lspconfig").gopls.setup({
 })
 
 -- Typescript
-require("lspconfig").tsserver.setup({})
+require("lspconfig").ts_ls.setup({})
 
 -- Lua
 require("lspconfig").lua_ls.setup({})
@@ -133,7 +157,7 @@ require("lspconfig").cssls.setup({
 require("lspconfig").dockerls.setup({})
 
 -- ASM
-require("lspconfig").asm_lsp.setup({})
+-- require("lspconfig").asm_lsp.setup({})
 
 -- YAML
 require("lspconfig")["yamlls"].setup({
@@ -142,7 +166,7 @@ require("lspconfig")["yamlls"].setup({
 			format = {
 				enable = true,
 			},
-			schemas = { kubernetes = { "*.yaml", "*.yml" }}
+			schemas = { kubernetes = { "*.yaml", "*.yml" } }
 		},
 	},
 })
@@ -152,14 +176,14 @@ require("lspconfig")["yamlls"].setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
+require 'lspconfig'.html.setup {
+	capabilities = capabilities,
 }
 -- HTMX
-require("lspconfig").htmx.setup{}
+require("lspconfig").htmx.setup {}
 
 -- Zig
-require("lspconfig").zls.setup{}
+require("lspconfig").zls.setup {}
 
 -- Svelte
-require("lspconfig").svelte.setup{}
+require("lspconfig").svelte.setup {}

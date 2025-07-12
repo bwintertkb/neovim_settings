@@ -12,3 +12,5 @@ require("no-clown-fiesta").setup({
     lsp = { underline = true }
   },
 })
+
+vim.api.nvim_set_hl(0, "LspInlayHint", { link = "Comment" })

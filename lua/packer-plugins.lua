@@ -5,14 +5,8 @@ return require("packer").startup(function(use)
 	use("bwintertkb/no-clown-fiesta.nvim")
 	-- vim-airline
 	use("vim-airline/vim-airline")
-	-- dev-icons
-	use("ryanoasis/vim-devicons")
-	-- enclose navigation
-	use("bwintertkb/enclose_nav.nvim")
 	-- visual wrap
 	use("bwintertkb/visual_wrap.nvim")
-
-	use("airblade/vim-gitgutter")
 	-- Tagbar for code navigation
 	use("preservim/tagbar")
 	-- For commenting gcc & gc
@@ -39,7 +33,6 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/nvim-cmp")
-	-- use 'noib3/nvim-completion'
 	use("hrsh7th/vim-vsnip")
 	use("hrsh7th/vim-vsnip-integ")
 	-- Tabnine
@@ -56,11 +49,7 @@ return require("packer").startup(function(use)
 	--LSPKind
 	use("onsails/lspkind.nvim")
 	use({ "j-hui/fidget.nvim", tag = "legacy" })
-	use("kosayoda/nvim-lightbulb")
-	use("m-demare/hlargs.nvim")
 	use("simrat39/rust-tools.nvim")
-	use("weilbith/nvim-code-action-menu")
-	use("kyazdani42/nvim-web-devicons")
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "*",
@@ -73,21 +62,18 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
 	})
-	use("natebosch/vim-lsc")
 	use("mg979/vim-visual-multi")
 	use("dyng/ctrlsf.vim")
 	use("jiangmiao/auto-pairs")
 	use("MunifTanjim/nui.nvim")
-	use("nvim-neo-tree/neo-tree.nvim")
-	use("leafgarland/typescript-vim")
-	use("ianks/vim-tsx")
-	use("jose-elias-alvarez/typescript.nvim")
-	use("nvim-treesitter/nvim-treesitter")
-	use("rafamadriz/neon")
+	use("bwintertkb/neo-tree.nvim")
+	use(
+		"nvim-treesitter/nvim-treesitter"
+	)
+	-- dev-icons
+	use("nvim-tree/nvim-web-devicons")
 	-- line highlight
 	use("miyakogi/conoline.vim")
-	-- python autoformatter
-	use("smbl64/vim-black-macchiato")
 	-- Github Copilot
 	use("zbirenbaum/copilot.lua")
 	use {
@@ -97,18 +83,7 @@ return require("packer").startup(function(use)
 			require("copilot_cmp").setup()
 		end
 	}
-	-- Surround
-	use({
-		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	})
-	-- Formatter
-	use("jose-elias-alvarez/null-ls.nvim")
+	use("supermaven-inc/supermaven-nvim")
 	-- Autotag
 	use("windwp/nvim-ts-autotag")
 	-- Debugger
@@ -119,5 +94,8 @@ return require("packer").startup(function(use)
 
 	-- Git blame
 	use("f-person/git-blame.nvim")
+
+	-- -- Command line
+	use('hrsh7th/cmp-cmdline')
 end
 )

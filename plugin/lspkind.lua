@@ -7,6 +7,7 @@ local source_mapping = {
   cmp_tabnine = "[TN]",
   path        = "[Path]",
   copilot     = "[CP]",
+  supermaven     = "[SuperMaven]",
 }
 
 require('cmp').setup({
@@ -25,6 +26,7 @@ require('cmp').setup({
       max_width = 50,        -- truncate long completion entries
       symbol_map = {
         Copilot = "",       -- icon to show for Copilot suggestions
+		Supermaven = "",
       },
       before = function (entry, vim_item)
         -- TabNine custom logic
@@ -53,4 +55,5 @@ require('cmp').setup({
 })
 
 -- Set highlight for Copilot suggestions
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", { fg = "#6CC644" })
