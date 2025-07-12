@@ -32,6 +32,27 @@ nnoremap <silent> <leader>. <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.format()<CR>
 ]])
 
+
+require("lsp-endhints").setup {
+	icons = {
+		type      = "",
+		parameter = "",
+		offspec   = "",
+		unknown   = "",
+	},
+	-- keep the rest of your settings as-is
+	label = {
+		truncateAtChars   = 20,
+		padding           = 1,
+		marginLeft        = 0,
+		sameKindSeparator = ", ",
+	},
+	extmark = {
+		priority = 50,
+	},
+	autoEnableHints = true,
+}
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- Tell the server that we support adjusted text edits.
 capabilities.textDocument.completion.completionItem.insertTextMode = 2
@@ -47,7 +68,7 @@ local opts = {
 		executor = require("rust-tools/executors").quickfix, -- can be quickfix or termopen
 		reload_workspace_from_cargo_toml = true,
 		inlay_hints = {
-			auto                   = true,
+			auto                   = false,
 			only_current_line      = false,
 			show_parameter_hints   = true,
 			parameter_hints_prefix = "<-",

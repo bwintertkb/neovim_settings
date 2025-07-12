@@ -225,6 +225,12 @@ _G.packer_plugins = {
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
+  ["nvim-lsp-endhints"] = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17lsp-endhints\frequire\0" },
+    loaded = true,
+    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/nvim-lsp-endhints",
+    url = "https://github.com/bwintertkb/nvim-lsp-endhints"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -324,6 +330,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-lsp-endhints
+time([[Config for nvim-lsp-endhints]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17lsp-endhints\frequire\0", "config", "nvim-lsp-endhints")
+time([[Config for nvim-lsp-endhints]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")

@@ -45,6 +45,12 @@ return require("packer").startup(function(use)
 	use("simrat39/rust-tools.nvim")
 	use("j-hui/fidget.nvim", { tag = "legacy" })
 	use("onsails/lspkind.nvim")
+	use {
+		"bwintertkb/nvim-lsp-endhints",
+		config = function()
+			require("lsp-endhints").setup() -- required, even if empty
+		end,
+	}
 
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp")
