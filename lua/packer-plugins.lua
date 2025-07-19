@@ -30,8 +30,6 @@ return require("packer").startup(function(use)
 	use("terrortylor/nvim-comment")
 
 	-- Fuzzy Finder
-	use("junegunn/fzf")
-	use("bwintertkb/fzf-lua")
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",

@@ -13,6 +13,7 @@ require("mason").setup({
 --   automatic_installation = false,
 -- })
 
+-- nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
 vim.cmd([[
 nnoremap gR :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
@@ -21,7 +22,6 @@ nnoremap <silent> K         <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gi        <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gc        <cmd>lua vim.lsp.buf.incoming_calls()<CR>
 nnoremap <silent> gd        <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gR        <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gs        <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gw        <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
