@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
   },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -189,6 +184,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
