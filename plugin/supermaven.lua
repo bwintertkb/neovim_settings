@@ -21,7 +21,7 @@ local function echo_temp(msg)
 	vim.api.nvim_echo({ { msg, "None" } }, false, {})
 	vim.defer_fn(function()
 		vim.api.nvim_echo({ { '' } }, false, {})
-	end, 1500)
+	end, 2000)
 end
 
 -- Fixed: wrap the full command string
@@ -35,5 +35,15 @@ local function supermaven_stop()
 	echo_temp("Supermaven disabled")
 end
 
-vim.keymap.set('n', '<leader>g', supermaven_start, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>G', supermaven_stop, { noremap = true, silent = true })
+local is_enabled = true
+
+local function supermaven_toggle()
+	is_enabled = not is_enabled
+	if is_enabled then
+		supermaven_start()
+	else
+		supermaven_stop()
+	end
+end
+
+vim.keymap.set('n', '<leader>G', supermaven_toggle, { noremap = true, silent = true })
