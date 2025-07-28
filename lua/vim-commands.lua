@@ -1,7 +1,7 @@
+-- \ 'GoToDefinition': '<C-]>',
 vim.cmd([[
 set mouse=a
 let g:lsc_auto_map = {
-    \ 'GoToDefinition': '<C-]>',
     \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
     \ 'FindReferences': 'gr',
     \ 'NextReference': '<C-n>',
