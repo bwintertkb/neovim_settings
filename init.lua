@@ -28,7 +28,7 @@ vim.keymap.set("n", "<C-M>", [[:%s/\r//g<CR>]], { desc = "Remove ^M (CR) chars" 
 -- Jump backward (same as <C-o>)
 vim.keymap.set('n', '<C-j>', '<C-o>', { noremap = true })
 -- Jump forward (same as <C-i>, remapped from Tab)
-vim.keymap.set('n', '<C-S-j>', '<C-i>', { noremap = true })
+vim.keymap.set('n', '<C-_>', '<C-i>')
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 require('vim-commands')
