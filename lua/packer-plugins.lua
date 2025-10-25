@@ -30,25 +30,30 @@ return require("packer").startup(function(use)
 	use("terrortylor/nvim-comment")
 
 	-- Fuzzy Finder
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
-	})
+	use({ "nvim-telescope/telescope.nvim", tag = "0.1.4" })
 	use("nvim-lua/plenary.nvim")
 
-	-- LSP
+	-- LSP (migrated to vim.lsp.config; keep lspconfig for server data/utilities)
 	use("neovim/nvim-lspconfig")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("simrat39/rust-tools.nvim")
-	use("j-hui/fidget.nvim", { tag = "legacy" })
+
+	-- Rust LSP: replace rust-tools with rustaceanvim (no lspconfig dependency)
+	use({
+		"mrcjkb/rustaceanvim",
+		-- optional: pin a stable tag if you like
+		-- tag = "4.25.0",
+	})
+
+	-- Status / UI around LSP
+	use({ "j-hui/fidget.nvim", tag = "legacy" })
 	use("onsails/lspkind.nvim")
-	use {
+	use({
 		"bwintertkb/nvim-lsp-endhints",
 		config = function()
 			require("lsp-endhints").setup() -- required, even if empty
 		end,
-	}
+	})
 
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp")
@@ -62,7 +67,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 
 	-- TabNine
-	if vim.fn.has("win32") then
+	if vim.fn.has("win32") == 1 then
 		use({
 			"tzachar/cmp-tabnine",
 			after = "nvim-cmp",
@@ -106,4 +111,7 @@ return require("packer").startup(function(use)
 			require("toggleterm").setup()
 		end,
 	})
+
+	-- Godbolt
+	use("p00f/godbolt.nvim")
 end)

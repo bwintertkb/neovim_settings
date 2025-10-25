@@ -33,113 +33,58 @@ nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.format()<CR>
 ]])
 
 
+-- lsp-endhints (unchanged)
 require("lsp-endhints").setup {
-	icons = {
-		type      = "",
-		parameter = "",
-		offspec   = "",
-		unknown   = "",
-	},
-	-- keep the rest of your settings as-is
-	label = {
-		truncateAtChars   = 20,
-		padding           = 1,
-		marginLeft        = 0,
-		sameKindSeparator = ", ",
-	},
-	extmark = {
-		priority = 50,
-	},
+	icons = { type = "", parameter = "", offspec = "", unknown = "" },
+	label = { truncateAtChars = 20, padding = 1, marginLeft = 0, sameKindSeparator = ", " },
+	extmark = { priority = 50 },
 	autoEnableHints = true,
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
--- Tell the server that we support adjusted text edits.
-capabilities.textDocument.completion.completionItem.insertTextMode = 2
+-- Capabilities
+local caps = vim.lsp.protocol.make_client_capabilities()
+caps.textDocument.completion.completionItem.insertTextMode = 2
 
--- pyright
-require("lspconfig").pyright.setup({})
-
---rust
-local opts = {
-	-- rust-tools options
+-- ======================
+-- RUST: switch to rustaceanvim (rust-tools is deprecated)
+-- ======================
+-- Add the plugin 'mrcjkb/rustaceanvim' then configure:
+vim.g.rustaceanvim = {
 	tools = {
-		hover_with_actions = false,
-		executor = require("rust-tools/executors").quickfix, -- can be quickfix or termopen
-		reload_workspace_from_cargo_toml = true,
-		inlay_hints = {
-			auto                   = false,
-			only_current_line      = false,
-			show_parameter_hints   = true,
-			parameter_hints_prefix = "<-",
-			other_hints_prefix     = "=>",
-			max_len_align          = false,
-			max_len_align_padding  = 1,
-			right_align            = false,
-			right_align_padding    = 7,
-			highlight              = "Comment",
-		},
+		-- roughly analogous toggles (rustaceanvim handles hints itself)
+		hover_actions = { auto_focus = false },
 	},
-
-	-- all the opts to send to nvim-lspconfig
-	-- these override the defaults set by rust-tools.nvim
-	-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-	-- https://rust-analyzer.github.io/manual.html#features
 	server = {
+		capabilities = caps,
 		settings = {
 			["rust-analyzer"] = {
-				-- inlayHints = {
-				-- 	typeHints         = { enable = false }, -- ← turn off `let x: Type = ...` hints
-				-- 	parameterHints    = { enable = true }, -- keep parameter name hints
-				-- 	chainingHints     = { enable = true }, -- keep method‐chain result type hints
-				-- 	closingBraceHints = { enable = true }, -- keep “} // impl Foo” hints
-				-- 	-- you can leave all the rest at their defaults:
-				-- 	-- bindingModeHints, closureReturnTypeHints, lifetimeElisionHints, etc.
-				-- },
-				sematicHighliting = {
-					enabled = false,
-				},
+				sematicHighliting = { enabled = false }, -- keeping your original key (typo preserved)
 				assist = {
 					importEnforceGranularity = true,
 					importPrefix = "crate",
 				},
-				cargo = {
-					allFeatures = false,
-					targetDir = "target/ra"
-				},
-				checkOnSave = {
-					-- enable = false
-					enable = true,
-					invocationStrategy = "once"
-					-- default: `cargo check`
-					-- command = "clippy",
-					-- command = "cargo check",
-				},
+				cargo = { allFeatures = true, targetDir = "target/ra" },
+				checkOnSave = { enable = true, invocationStrategy = "once" },
 				completion = {
-					autoimport = {
-						enable = true,
-					},
-					callable = {
-						snippets = "none"
-					}
-				}
+					autoimport = { enable = true },
+					callable = { snippets = "none" },
+				},
 			},
-
 		},
 	},
 }
-require("rust-tools").setup(opts)
---
---Go
-require("lspconfig").gopls.setup({
-	cmd = { "gopls" },
+
+-- ======================
+-- Other language servers via the new API
+-- ======================
+
+-- Go (gopls)
+vim.lsp.config('gopls', {
+	cmd = { 'gopls' },
 	settings = {
 		gopls = {
 			analyses = {
-				nilness = true,
-				unusedparams = true,
-				unusedwrite = true,
-				useany = true,
+				nilness = true, unusedparams = true, unusedwrite = true, useany = true,
 			},
 			experimentalPostfixCompletions = true,
 			gofumpt = true,
@@ -147,64 +92,67 @@ require("lspconfig").gopls.setup({
 			usePlaceholders = true,
 		},
 	},
-	on_attach = on_attach,
+	on_attach = _G.on_attach, -- keep if you define on_attach somewhere
 })
+vim.lsp.enable('gopls')
 
--- Typescript
-require("lspconfig").ts_ls.setup({})
+-- Python
+vim.lsp.config('pylsp', {})
+vim.lsp.enable('pylsp')
+
+-- TypeScript
+vim.lsp.config('tsserver', {}) -- In 0.11+ the built-in name is often 'tsserver' or 'ts_ls' depending on distro.
+vim.lsp.enable('tsserver')
 
 -- Lua
-require("lspconfig").lua_ls.setup({})
+vim.lsp.config('lua_ls', {})
+vim.lsp.enable('lua_ls')
 
 -- C/C++
-require("lspconfig").clangd.setup({})
+vim.lsp.config('clangd', {})
+vim.lsp.enable('clangd')
 
 -- Solidity
-require("lspconfig").solidity.setup({})
+vim.lsp.config('solidity_ls_nomicfoundation', {}) -- or 'solidity' depending on your server binary
+vim.lsp.enable('solidity_ls_nomicfoundation')
 
 -- Bash
-require("lspconfig").bashls.setup({})
+vim.lsp.config('bashls', {})
+vim.lsp.enable('bashls')
 
--- CSS
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require("lspconfig").cssls.setup({
-	capabilities = capabilities,
+-- CSS (needs snippetSupport)
+local css_caps = vim.tbl_deep_extend('force', {}, caps, {
+	textDocument = { completion = { completionItem = { snippetSupport = true } } }
 })
+vim.lsp.config('cssls', { capabilities = css_caps })
+vim.lsp.enable('cssls')
 
 -- Docker
-require("lspconfig").dockerls.setup({})
-
--- ASM
--- require("lspconfig").asm_lsp.setup({})
+vim.lsp.config('dockerls', {})
+vim.lsp.enable('dockerls')
 
 -- YAML
-require("lspconfig")["yamlls"].setup({
+vim.lsp.config('yamlls', {
 	settings = {
 		yaml = {
-			format = {
-				enable = true,
-			},
-			schemas = { kubernetes = { "*.yaml", "*.yml" } }
+			format = { enable = true },
+			schemas = { kubernetes = { "*.yaml", "*.yml" } },
 		},
 	},
 })
+vim.lsp.enable('yamlls')
 
--- HTML
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- HTML (snippet support)
+local html_caps = vim.tbl_deep_extend('force', {}, caps, {
+	textDocument = { completion = { completionItem = { snippetSupport = true } } }
+})
+vim.lsp.config('html', { capabilities = html_caps })
+vim.lsp.enable('html')
 
-require 'lspconfig'.html.setup {
-	capabilities = capabilities,
-}
 -- HTMX
-require("lspconfig").htmx.setup {}
+vim.lsp.config('htmx', {})
+vim.lsp.enable('htmx')
 
 -- Zig
-require("lspconfig").zls.setup {}
-
--- Svelte
-require("lspconfig").svelte.setup {}
+vim.lsp.config('zls', {})
+vim.lsp.enable('zls')

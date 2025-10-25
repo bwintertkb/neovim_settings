@@ -105,11 +105,8 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-tabnine"] = {
-    after_files = { "/home/bwintertkb/.local/share/nvim/site/pack/packer/opt/cmp-tabnine/after/plugin/cmp-tabnine.lua" },
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/opt/cmp-tabnine",
+    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
   },
   ["cmp-vsnip"] = {
@@ -154,6 +151,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/go.nvim",
     url = "https://github.com/ray-x/go.nvim"
+  },
+  ["godbolt.nvim"] = {
+    loaded = true,
+    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/godbolt.nvim",
+    url = "https://github.com/p00f/godbolt.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -256,15 +258,15 @@ _G.packer_plugins = {
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["rust-tools.nvim"] = {
-    loaded = true,
-    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
-    url = "https://github.com/simrat39/rust-tools.nvim"
-  },
   ["rust.vim"] = {
     loaded = true,
     path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
+  },
+  rustaceanvim = {
+    loaded = true,
+    path = "/home/bwintertkb/.local/share/nvim/site/pack/packer/start/rustaceanvim",
+    url = "https://github.com/mrcjkb/rustaceanvim"
   },
   ["supermaven-nvim"] = {
     loaded = true,
@@ -320,18 +322,16 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lsp-endhints
-time([[Config for nvim-lsp-endhints]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17lsp-endhints\frequire\0", "config", "nvim-lsp-endhints")
-time([[Config for nvim-lsp-endhints]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-lsp-endhints
+time([[Config for nvim-lsp-endhints]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17lsp-endhints\frequire\0", "config", "nvim-lsp-endhints")
+time([[Config for nvim-lsp-endhints]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd cmp-tabnine ]]
 vim.cmd [[ packadd copilot.lua ]]
 vim.cmd [[ packadd copilot-cmp ]]
 

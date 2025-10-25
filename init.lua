@@ -31,5 +31,20 @@ vim.keymap.set('n', '<C-j>', '<C-o>', { noremap = true })
 vim.keymap.set('n', '<C-_>', '<C-i>')
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    -- If the file was read as unix but contains stray ^M,
+    -- reload it as dos automatically.
+    if vim.bo.fileformat == "unix" then
+      local has_cr = vim.fn.search("\\r", "nw") ~= 0
+      if has_cr then
+        vim.cmd("e ++ff=dos")
+      end
+    end
+  end,
+})
+
 require('vim-commands')
 require('packer-plugins')
