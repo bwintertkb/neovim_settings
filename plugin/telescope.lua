@@ -17,7 +17,7 @@ require('telescope').setup({
 			'--line-number',
 			'--column',
 			'--smart-case',
-			'-u' -- include hidden/unignored files
+			-- '-u' -- include hidden/unignored files
 		},
 		mappings = {
 			-- i = {

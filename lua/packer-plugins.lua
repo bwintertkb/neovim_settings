@@ -93,12 +93,6 @@ return require("packer").startup(function(use)
 	})
 	use("supermaven-inc/supermaven-nvim")
 
-	-- Debugging
-	use("nvim-neotest/nvim-nio")
-	use("mfussenegger/nvim-dap")
-	use("rcarriga/nvim-dap-ui")
-	use("theHamsta/nvim-dap-virtual-text")
-
 	-- Language-specific Plugins
 	use("rust-lang/rust.vim")
 	use("ray-x/go.nvim")
