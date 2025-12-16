@@ -1,21 +1,17 @@
--- Auto-reload DOS files as DOS
-vim.api.nvim_create_autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    if vim.bo.fileformat == "unix" then
-      local has_cr = vim.fn.search("\\r", "nw") ~= 0
-      if has_cr then
-        vim.cmd("e ++ff=dos")
-      end
-    end
-  end,
-})
+-- ~/.config/nvim/lua/config/autocmds.lua
 
+local function set_inlay_hints()
+  -- Use a noticeably lighter grey. 
+  -- #C0C0C0 is Silver/Light Grey. 
+  -- #909090 is Medium Grey.
+  vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#808080", bg = "NONE" })
+end
+
+-- 1. Apply the color IMMEDIATELY (Fixes the startup issue)
+set_inlay_hints()
+
+-- 2. Apply the color whenever the colorscheme changes (Fixes theme switching)
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
-  callback = function()
-    -- Set Inlay Hints to a slightly dark grey
-    -- Try #808080 (Medium Grey) or #606060 (Darker Grey)
-    vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#808080", bg = "NONE" })
-  end,
+  callback = set_inlay_hints,
 })
