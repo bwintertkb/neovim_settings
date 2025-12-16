@@ -26,5 +26,7 @@
   "supermaven-nvim": { "branch": "main", "commit": "07d20fce48a5629686aefb0a7cd4b25e33947d50" },
   "telescope.nvim": { "branch": "master", "commit": "3d757e586ff0bfc85bdb7b46c9d3d932147a0cde" },
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
+  "vim-airline": { "branch": "master", "commit": "499ae85357db811108ba1c52aa161fb09c462572" },
+  "vim-airline-themes": { "branch": "master", "commit": "77aab8c6cf7179ddb8a05741da7e358a86b2c3ab" },
   "visual_wrap.nvim": { "branch": "main", "commit": "06e68a3f87f3515ad7cec09724537d992d1622e9" }
 }
