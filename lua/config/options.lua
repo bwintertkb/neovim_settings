@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.cmd('set clipboard=unnamedplus') -- All yanks go to clipboard register.
 vim.o.relativenumber = true
 vim.o.autoindent = true
 vim.o.tabstop = 4
@@ -14,3 +13,5 @@ vim.o.wildmode = 'full'
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 
+-- Now set the option
+vim.opt.clipboard = "unnamedplus"

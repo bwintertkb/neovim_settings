@@ -19,3 +19,22 @@ vim.keymap.set("n", "<C-M>", [[:%s/\r//g<CR>]], { desc = "Remove ^M (CR) chars" 
 vim.keymap.set('n', '<C-j>', '<C-o>', { noremap = true })
 vim.keymap.set('n', '<C-_>', '<C-i>')
 
+-- 1. Map 'jk' to exit Terminal Insert Mode (go to Normal Mode)
+-- This allows you to navigate the terminal output like a normal buffer
+vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
+
+-- 2. Map <C-j> to open a Vertical Terminal on the Right (30% width)
+vim.keymap.set({ "n", "t" }, "<C-j>", function()
+	-- 'rightbelow vnew' creates a clean vertical split on the far right
+	vim.cmd("rightbelow vnew")
+
+	-- Start the terminal in the new window
+	vim.cmd("terminal")
+
+	-- Calculate 25% of the total screen width
+	local width = math.floor(vim.o.columns * 0.30)
+	vim.cmd("vertical resize " .. width)
+
+	-- Automatically enter Insert mode so you can type immediately
+	vim.cmd("startinsert")
+end, { desc = "Open Vertical Terminal" })
