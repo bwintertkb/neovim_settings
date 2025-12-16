@@ -1,14 +1,13 @@
-require('config.autocmds')
-require('config.diagnostics')
-require('config.keymaps')
-
--- Load your custom commands (Safe to keep, assuming this file exists)
-require('vim-commands')
+-- =========================================
+-- 1. PRE-SETUP (Global Options & Leader)
+-- =========================================
+-- IMPORTANT: Mapleader must be set BEFORE lazy.setup or plugins load
+vim.g.mapleader = " " 
+vim.g.maplocalleader = "\\"
 
 -- =========================================
--- 2. LAZY.NVIM BOOTSTRAP (Replaces Packer)
+-- 2. LAZY.NVIM BOOTSTRAP
 -- =========================================
--- This code automatically downloads lazy.nvim if you don't have it.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -22,13 +21,22 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- This replaces `require('packer_plugins')`
--- We tell Lazy to import any file found in 'lua/plugins/*.lua' automatically.
+-- =========================================
+-- 3. LOAD PLUGINS
+-- =========================================
 require("lazy").setup({
   spec = {
-    -- Import your plugins folder directly
     { import = "plugins" },
   },
-  -- Automatically check for plugin updates
   checker = { enabled = true, notify = false },
 })
+
+-- =========================================
+-- 4. POST-SETUP (Custom Configs)
+-- =========================================
+-- Load these AFTER lazy setup so your keymaps override plugin defaults
+-- and your autocmds can interact with loaded plugins.
+require('config.autocmds')
+require('config.diagnostics')
+require('config.keymaps')
+require('vim-commands')
