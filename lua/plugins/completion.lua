@@ -43,7 +43,7 @@ return {
 
         -- Optional: Shows the suggestion in gray text inline
         ghost_text = {
-          enabled = true,
+          enabled = false,
         },
 
         menu = {
