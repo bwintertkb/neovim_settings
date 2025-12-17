@@ -14,5 +14,6 @@ return {
       bracketedParameters = true,
     },
     autoEnableHints = true, -- Automatically enable hints on startup
+	toggleHints = "always"
   }
 }

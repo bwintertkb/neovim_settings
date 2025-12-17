@@ -1,19 +1,17 @@
 return {
   {
     "bwintertkb/no-clown-fiesta.nvim",
+    -- dir = "/home/bwintertkb/tp/no-clown-fiesta.nvim", -- REMOVED THIS LINE
     lazy = false,
     priority = 1000,
     config = function()
       local plugin = require("no-clown-fiesta")
-      
-      -- Define a plain style (no bold, no italic)
       local plain = { bold = false, italic = false }
 
       plugin.setup({
-        theme = "dim", -- or "dark", "light"
-        transparent = false,
+        theme = "dim", 
+        transparent = false, 
         styles = {
-          -- Enforce plain text for all semantic groups
           comments = plain,
           functions = plain,
           keywords = plain,
@@ -24,11 +22,9 @@ return {
         },
       })
 
-      -- Load the colorscheme
       plugin.load()
-
-      -- OPTIONAL: Force-disable bold/italic for ANY remaining groups
-      -- (This catches specific plugin highlights or UI elements not covered above)
+      
+      -- (Keep your style overrides here if you still want them)
       local groups = vim.fn.getcompletion("", "highlight")
       for _, group in ipairs(groups) do
         local hl = vim.api.nvim_get_hl(0, { name = group })
