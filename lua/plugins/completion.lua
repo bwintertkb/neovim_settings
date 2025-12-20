@@ -7,6 +7,13 @@ return {
       'saghen/blink.compat',
       'supermaven-inc/supermaven-nvim',
     },
+	list = {
+          selection = {
+            preselect = true,   -- Automatically select the first item
+            auto_insert = true  -- specific to blink: inserts immediately on selection
+          }
+        },
+
     opts = {
       keymap = { 
         preset = 'none',
